@@ -20,15 +20,7 @@ node('master')
                  '''
              }
         }
-        stage('deploy'){
-            bat '''
-            copy C:\\Jenkins_Code\\target\\WebApp.war C:\\Tomcat\\webapps
-            cd c:\\Tomcat\\bin
-            net stop Tomcat9
-            sleep 10
-            net start Tomcat9
-            '''
-        }
+        
        // Deploy is written in another jenkins job 
         
     }
