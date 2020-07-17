@@ -21,7 +21,9 @@ node('master')
              }
         }
         stage('deploy'){
+            ws('C:\\Jenkins_Code'){
             deploy adapters: [tomcat9(credentialsId: 'tomcat9', path: '', url: 'http://localhost:8181')], contextPath: '/demo', onFailure: false, war: '**/*.war'
+            }
         }
         
        // Deploy is written in another jenkins job 
